@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthserviceService } from '../../services/authservice.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private Auth: AuthserviceService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  login(){
-
+  loginwithGoogle(){
+    this.Auth.login();
   }
 }

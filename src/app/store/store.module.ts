@@ -10,10 +10,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductsComponent } from './components/products/products.component';
 import { SharedModule } from '../shared/shared.module';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 @NgModule({
-  declarations: [WrapperComponent, HeaderComponent, SliderComponent, ProductsComponent],
-  imports: [CommonModule, StoreRoutingModule, MatIconModule, FlexLayoutModule,SharedModule],
-  exports:[HeaderComponent]
+  declarations: [WrapperComponent, HeaderComponent, SliderComponent, ProductsComponent, SidenavComponent],
+  imports: [CommonModule, StoreRoutingModule, MatIconModule, FlexLayoutModule,SharedModule,MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,],
+  exports:[HeaderComponent,SidenavComponent]
 })
 export class StoreModule {
   static forRoot(arg0: {
