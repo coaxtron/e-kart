@@ -1,0 +1,20 @@
+<div fxLayout="column" class="header-part">
+  <!-- Toolbar -->
+  <app-header></app-header>
+<app-slider></app-slider>
+<app-products></app-products>
+  <main class="app-container" role="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!--back to top button  -->
+<button
+  class="fas fa-chevron-circle-up"
+  [ngClass]="{ 'show-scroll': showScroll }"
+  (click)="scrollToTop()"
+  class="scroll-to-top"
+>
+  <mat-icon>expand_less</mat-icon>
+</button>
+<!--back to top button  -->

@@ -1,0 +1,24 @@
+
+.login{
+  padding: 130px 0px 130px 0px;
+  .example-card {
+    max-width: 400px;
+    .example-container {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+    }
+
+    .example-container > * {
+      width: 100%;
+    }
+
+    .google{
+      background-color:#F44336;
+      color: white;
+    }
+  }
+
+}
+
+

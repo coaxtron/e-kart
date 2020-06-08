@@ -1,0 +1,122 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  font-family: arial;
+
+  @media screen and (max-width: 599px) {
+  max-width: 200px;
+  border: 1px #00000066 solid;
+
+  h5 {
+  font-size: 1rem;
+  }
+  }
+
+  .product-img {
+  height: 200px;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (max-width: 599px) {
+
+  height: 120px;
+  width: 120px;
+  }
+  }
+
+
+  .title {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 5px 0px 0px 0px;
+  overflow: hidden;
+  width: 220px;
+  @media screen and (max-width: 599px) {
+  width: 120px;
+  }
+  }
+
+  }
+
+  .card:hover {
+  background: rgba(111, 150, 149, 0.54);
+  }
+
+  .price {
+  color: grey;
+  font-size: 22px;
+  }
+
+  .card button {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #28a745;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+
+  @media screen and (max-width: 599px) {
+  font-size: 15px;
+  padding: 5px;
+  }
+
+  }
+
+  img {
+  width: 100%;
+  height: auto;
+  }
+
+  .out-of-stock {
+  background: rgba(66, 66, 66, 0.75);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 80px;
+    left: 75px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+
+
+  @media screen and (max-width: 599px) {
+    font-size: 15px;
+    padding: 0px;
+    width: 70px;
+    height: 70px;
+    top: 80px;
+    left: 25px;
+
+  }
+
+  }
+
+  // background color .out-of-stock
+  .stock-wrapper::before {
+  content: "";
+  background: rgba(34, 34, 34, 0.35);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
+
+
+
