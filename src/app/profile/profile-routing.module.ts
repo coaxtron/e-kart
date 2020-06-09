@@ -9,6 +9,7 @@ import { ReviewsRatingComponent } from './components/reviews-rating/reviews-rati
 import { SaveCardsComponent } from './components/save-cards/save-cards.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { MyRewardsComponent } from './components/my-rewards/my-rewards.component';
+import { AuthGuardService } from '../shared/services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
     children:[
       {
         path: 'profile',
-        component: ProfileInfoComponent
+        component: ProfileInfoComponent,canActivate:[AuthGuardService]
       },
       {
         path: 'address',

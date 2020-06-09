@@ -1,37 +1,29 @@
 .contact-box{
   background: #262626;
-  display: flex;
   justify-content: center;
   color: #fff;
   font-size: 12px;
-  padding: 0px 2%;
 }
-.contact-box .first{
-  flex: 1;
-  align-items: center;
-}
-.contact-box .second{
-  flex: 2;
-}
-.contact-box .third{
-  flex: 2;
-}
+
 .header-box{
   background-color: white;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   box-shadow: 0px 1px 6px rgba(0,0,0,0.3);
+  padding: 10px 0px 10px 0px;
 }
 .container{
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 10px 2%;
+  // padding: 10px 2%;
 }
 .menu{
   display: flex;
+  margin-top: 10px;
 }
 .list{
   list-style: none;
+  margin-top: 10px;
 }
 .list .contain:hover {
   color: green;
