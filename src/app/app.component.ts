@@ -38,7 +38,7 @@ export class AppComponent {
 
   constructor(
     private userService: UserService,
-    private auth: AuthserviceService,
+    public auth: AuthserviceService,
     router: Router
   ) {
     auth.user$.subscribe((user) => {

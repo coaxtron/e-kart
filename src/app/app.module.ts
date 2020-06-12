@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -41,6 +43,7 @@ import { environment } from '../environments/environment';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressSpinnerModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, // for database
