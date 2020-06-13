@@ -5,6 +5,7 @@ import { PTileComponent } from './components/p-tile/p-tile.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AdminAuthGuardService } from './services/admin-auth-guard.service';
 
 
 
@@ -17,6 +18,7 @@ import { AuthGuardService } from './services/auth-guard.service';
   ],
   exports:[PTileComponent],
   providers:[UserService,
-  AuthGuardService]
+  AuthGuardService,
+AdminAuthGuardService]
 })
 export class SharedModule { }

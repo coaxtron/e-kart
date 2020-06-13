@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase , AngularFireObject } from '@angular/fire/database';
+import { AppUser } from '../models/app-user';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,8 +19,8 @@ export class UserService {
     });
   }
 
-  // get(uid: string): FirebaseObjectObservable<AppUser> {
-  //   return this.db.object('/users/' + uid);
-  // }
+  get(uid: string): AngularFireObject<AppUser> {
+    return this.db.object('/users/' + uid);
+  }
 }
 // this.todoCollectionRef.doc(todo.id).update({ completed: !todo.completed });

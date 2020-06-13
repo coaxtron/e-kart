@@ -1,4 +1,4 @@
-<table *ngIf="user">
+<table *ngIf="appUser">
   <tr (click)="goToMyProfile()">
           <td>
                   <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_2fd3e8.svg" />
@@ -6,14 +6,14 @@
           </td>
           <td style="padding-left: 15px;">
                   <span>Hello,</span>
-                  <h3 style="margin: 0">Piyush Jain</h3>
+                  <h3 style="margin: 0">{{appUser.name}}</h3>
           </td>
           <td>
                   <mat-icon>chevron_right</mat-icon>
           </td>
   </tr>
 </table>
-<div class="login" *ngIf="!user">
+<div class="login" *ngIf="!appUser">
   <button mat-stroked-button color="primary" class="button" >LOGIN</button>
 </div>
 
@@ -40,7 +40,7 @@
           </table>
   </li>
 </ul>
-<ul class="list" *ngIf="user">
+<ul class="list" *ngIf="appUser">
   <li *ngFor="let item of profileMenu" [routerLink]="[item.link]" routerLinkActive="active"
           (click)="toggelSidenav()">
           <table>
@@ -55,7 +55,7 @@
           </table>
   </li>
 </ul>
-<ul class="list" *ngIf="user">
+<ul class="list" *ngIf="appUser">
   <li *ngFor="let item of myStuff" [routerLink]="[item.link]" routerLinkActive="active" (click)="toggelSidenav()">
           <table>
                   <tr>
@@ -69,7 +69,7 @@
           </table>
   </li>
 </ul>
-<div *ngIf="user">
+<div *ngIf="appUser">
   <table>
           <tr (click)="logout()">
                   <td>

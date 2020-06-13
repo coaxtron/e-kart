@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthserviceService } from 'src/app/auth/services/authservice.service';
+import { UserService } from 'src/app/shared/services/user.service';
+import { AppUser } from 'src/app/shared/models/app-user';
 
 @Component({
   selector: 'app-sidenav',
@@ -15,22 +17,22 @@ export class SidenavComponent implements OnInit {
   profileMenu = [
     {
       title: 'My Profile',
-      link: '/myprofile/profile',
+      link: '/account/profile',
       icon: 'person'
     },
     {
       title: 'Saved Cards',
-      link: '/myprofile/carddetails',
+      link: '/account/carddetails',
       icon:'account_balance'
     },
     {
       title: 'My Address',
-      link: '/myprofile/address',
+      link: '/account/address',
       icon: 'border_color'
     },
     {
       title: 'My Orders',
-      link: '/myprofile/orders',
+      link: '/account/orders',
       icon: 'next_week'
     },
     {
@@ -40,7 +42,7 @@ export class SidenavComponent implements OnInit {
     },
     {
       title: 'My Wishlist',
-      link: '/myprofile/wishlist',
+      link: '/account/wishlist',
       icon:'shopping_cart'
     },
 
@@ -48,20 +50,23 @@ export class SidenavComponent implements OnInit {
   myStuff = [
     {
       title: 'My Reviews',
-      link: '/myprofile/reviews',
+      link: '/account/reviews',
       icon: 'rate_review'
     },
     {
       title: 'My Rewards',
-      link: '/myprofile/rewards',
+      link: '/account/rewards',
       icon: 'rate_review'
     },
   ];
   toggelSidenav() {
     this.sidenav.emit('toggel');
   }
-  constructor(private router: Router,public auth: AuthserviceService) { }
-  user:firebase.User;
+  appUser : AppUser;
+  constructor(private router: Router,public auth: AuthserviceService,private user :UserService) {
+    auth.appUser$.subscribe(appUser => this.appUser = appUser);
+  }
+
 
   ngOnInit(): void {
   }

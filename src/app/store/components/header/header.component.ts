@@ -8,6 +8,7 @@ import {
   state,
 } from '@angular/animations';
 import { AuthserviceService } from 'src/app/auth/services/authservice.service';
+import { AppUser } from 'src/app/shared/models/app-user';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +40,8 @@ import { AuthserviceService } from 'src/app/auth/services/authservice.service';
 export class HeaderComponent implements OnInit {
   loadingEnable: boolean;
   sidenavEnable = false;
-  user: firebase.User;
+  // user: firebase.User;
+  appUser : AppUser;
 
   @Output()
   sidenav = new EventEmitter();
@@ -48,7 +50,9 @@ export class HeaderComponent implements OnInit {
     this.sidenav.emit('toggel');
   }
 
-  constructor(public auth: AuthserviceService) {}
+  constructor(public auth: AuthserviceService) {
+    auth.appUser$.subscribe(appUser => this.appUser = appUser);
+  }
 
   ngOnInit(): void {}
 

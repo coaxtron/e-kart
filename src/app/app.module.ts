@@ -18,11 +18,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { initializeApp } from 'firebase';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, // for database
 
+
+
   ],
+  exports:[TranslateModule],
   providers: [],
   bootstrap: [AppComponent]
 })

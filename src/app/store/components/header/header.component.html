@@ -7,66 +7,73 @@
 <!-- <mat-progress-bar mode="indeterminate" *ngIf="loadingEnable"></mat-progress-bar> -->
 <div class="header-box">
   <div class="container">
-      <div class="mobile-view">
-          <mat-icon (click)="toggelSidenav()">menu</mat-icon>
-      </div>
-      <div class="logo">
-          <a [routerLink]="['/']" style="width: 100px;">
-              <img src="https://i.pinimg.com/originals/95/3d/b3/953db3147cc28220fcca86e94c34b323.png" height="50px">
-          </a>
-      </div>
+    <div class="mobile-view">
+      <mat-icon (click)="toggelSidenav()">menu</mat-icon>
+    </div>
+    <div class="logo">
+      <a [routerLink]="['/']" style="width: 100px;">
+        <img src="https://i.pinimg.com/originals/95/3d/b3/953db3147cc28220fcca86e94c34b323.png" height="50px" />
+      </a>
+    </div>
 
-
-      <!-- <form class="example-form">
+    <!-- <form class="example-form">
               <mat-form-field class="example-full-width">
                   <input matInput placeholder="Search">
                   <mat-icon matSuffix>search</mat-icon>
               </mat-form-field>
           </form> -->
 
-      <div class="menu" fxLayoutAlign.gt-lg="center center">
-          <ul class="list">
-              <li class="contain" [routerLink]="['/home']" routerLinkActive="active"><span>HOME</span></li>
-              <li class="contain" [routerLink]="['/products']" routerLinkActive="active"><span>PRODUCTS</span></li>
-              <li class="contain" [routerLink]="['/images']" routerLinkActive="active"><span>IMAGES</span></li>
-              <li class="contain" [routerLink]="['/contact-us']" routerLinkActive="active"><span>CONTACT US</span>
-              </li>
+    <div class="menu" fxLayoutAlign.gt-lg="center center">
+      <ul class="list">
+        <li class="contain" [routerLink]="['/home']" routerLinkActive="active">
+          <span>HOME</span>
+        </li>
+        <li class="contain" [routerLink]="['/products']" routerLinkActive="active">
+          <span>PRODUCTS</span>
+        </li>
+        <li class="contain" [routerLink]="['/images']" routerLinkActive="active">
+          <span>IMAGES</span>
+        </li>
+        <li class="contain" [routerLink]="['/contact-us']" routerLinkActive="active">
+          <span>CONTACT US</span>
+        </li>
+      </ul>
+    </div>
+    <div class="menu" fxLayout="row" fxLayoutGap="10px">
+      <ul fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" class="list">
+        <ng-template #anonymousUser>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/auth/login">Login</a>
+          </li>
+        </ng-template>
 
+        <li fxLayout="row" class="contain profile dropdown" *ngIf="appUser; else anonymousUser">
+          <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_2fd3e8.svg" width="25px" />
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{ appUser.name }}
+          </a>
+          <div class="dropdown-content">
+            <a routerLink="/account/profile">My Profile</a>
+            <a>Orders</a>
+            <ng-container *ngIf="appUser.isAdmin">
 
-          </ul>
-      </div>
-      <div class="menu" fxLayout="row" fxLayoutGap="10px">
-          <ul  fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" class="list">
-            <ng-template #anonymousUser>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/auth/login">Login</a>
-              </li>
-            </ng-template>
-
-              <li  fxLayout="row" class="contain profile dropdown"  *ngIf="auth.user$ |async as user; else anonymousUser">
-                  <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_2fd3e8.svg"
-                      width="25px">
- <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ user.displayName }}
-                      </a>
-                  <div class="dropdown-content">
-                      <a routerLink="/account/profile">My Profile</a>
-                      <a>Orders</a>
-                      <a>Wishlist</a>
-                      <a>Notifications</a>
-                      <a (click)="logout()">Logout</a>
-                  </div>
-              </li>
-              <li class="contain" *ngIf="auth.user$"[routerLink]="['/shopping-cart']">
-                  <mat-icon >add_shopping_cart</mat-icon>
-              </li>
-          </ul>
-      </div>
-      <!-- <div class="cart-icon mobile-view" *ngIf="!user">
+              <a>Dashboard</a>
+            </ng-container>
+            <a>Notifications</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </li>
+        <li class="contain" *ngIf="auth.user$" [routerLink]="['/shopping-cart']">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="cart-icon mobile-view" *ngIf="!user">
           <button mat-stroked-button color="primary" class="button" >LOGIN</button>
       </div> -->
 
-      <!-- <div class="cart-icon mobile-view" *ngIf="auth.user$">
+    <!-- <div class="cart-icon mobile-view" *ngIf="auth.user$">
           <a [routerLink]="['/myprofile/notifications']">
               <mat-icon >notification_important</mat-icon>
           </a>&nbsp; &nbsp;
@@ -74,8 +81,6 @@
               <mat-icon >add_shopping_cart</mat-icon>
           </a>
       </div> -->
-
-
   </div>
 </div>
 <!-- <app-sidenav class="sidenavEnable"></app-sidenav> -->
