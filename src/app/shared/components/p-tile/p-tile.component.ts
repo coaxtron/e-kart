@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-p-tile',
@@ -7,6 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PTileComponent implements OnInit {
   @Input() inStock : boolean;
+  @Input('product') product: Product;
+  @Input('show-actions') showActions = true;
+
   constructor() { }
 
   ngOnInit(): void {

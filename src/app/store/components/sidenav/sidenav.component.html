@@ -1,7 +1,7 @@
 <table *ngIf="appUser">
   <tr (click)="goToMyProfile()">
           <td>
-                  <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_2fd3e8.svg" />
+                  <img class="profile" width="50" src="{{appUser.photoURL}}" />
 
           </td>
           <td style="padding-left: 15px;">
@@ -14,7 +14,7 @@
   </tr>
 </table>
 <div class="login" *ngIf="!appUser">
-  <button mat-stroked-button color="primary" class="button" >LOGIN</button>
+  <button mat-stroked-button color="primary" class="button" routerLink="/auth/login" >LOGIN</button>
 </div>
 
 <ul class="list">
@@ -28,6 +28,16 @@
                   </tr>
           </table>
   </li>
+  <!-- <li *ngIf="appUser.isAdmin" class="contain" (click)="toggelSidenav()" [routerLink]="['/dashboard/add-product']" routerLinkActive="active">
+    <table>
+            <tr>
+                    <td>
+                            <mat-icon>home</mat-icon>
+                    </td>
+                    <td style="vertical-align: baseline;"><span style="margin-left: 10px;">DASHBOARD</span></td>
+            </tr>
+    </table>
+</li> -->
   <li class="contain" (click)="toggelSidenav()" [routerLink]="['/products']" routerLinkActive="active">
           <table>
                   <tr>

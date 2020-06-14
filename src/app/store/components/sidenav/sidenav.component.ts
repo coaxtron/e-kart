@@ -14,12 +14,12 @@ export class SidenavComponent implements OnInit {
   @Output()
   sidenav = new EventEmitter();
 
-  profileMenu = [
-    {
-      title: 'My Profile',
-      link: '/account/profile',
-      icon: 'person'
-    },
+    profileMenu = [
+      {
+        title: 'My Profile',
+        link: '/account/profile',
+        icon: 'person'
+      },
     {
       title: 'Saved Cards',
       link: '/account/carddetails',

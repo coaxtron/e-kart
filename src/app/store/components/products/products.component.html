@@ -1,33 +1,9 @@
 <div class="app-container"fxLayout="row wrap" fxLayoutAlign="center center"
-
+*ngFor="let p of products$";let num = index
 >
-  <app-p-tile [inStock] ="true"
+  <app-p-tile [product]="p"
             fxFlex.xs="50%" ></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="true"
-            fxFlex.xs="50%"></app-p-tile>
-  <app-p-tile [inStock] ="false"
-            fxFlex.xs="50%"></app-p-tile>
+
 
 </div>
+<!-- *ngFor="let c of categoryService.array" [value]="c.$key">{{c.$key}}-{{c.name}} -->
